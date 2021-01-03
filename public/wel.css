@@ -1,0 +1,316 @@
+*{
+  margin:31;
+  padding:0;
+  box-sizing: border-box;
+  font-family: 'Comfortaa', cursive;
+  scroll-behavior: smooth;
+}
+img{
+  width:100%;
+  height:100%;
+  position: absolute;
+  left: 0;
+}
+/* button{
+  visibility: hidden;
+} */
+
+body{
+  width: 100%;
+  height: 200%;
+}
+h1{
+  text-align: center;
+  font-size: 4em;
+  margin-top: 20%;
+}
+#phoenix-logo{
+
+}
+#voiceintro{
+  /* visibility: hidden; */
+  position: absolute;
+  /* padding: 20px; */
+  top: 0%;
+  left: 47%;
+  width: 30%;
+
+  /* height:10%;; */
+  border-radius: 24px;
+}
+#voiceintrobutton{
+  width:30%;
+  padding: 10px;
+}
+.introbox{
+  margin-top:25vh;
+  margin-left: 20%;
+  margin-right: 20%;
+  border: 2px solid white;
+}
+@-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  60%{
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+  }
+}
+
+/*  */
+@import "compass/css3";
+
+/* body {
+    background: #292929;
+    padding-left: 30px;
+} */
+.row {
+    float: left;
+    width: 100%;
+}
+.row .block {
+    float: left;
+    width: 25%;
+    height: 150px;
+}
+.hovicon {
+    display: inline-block;
+    font-size: 45px;
+    line-height: 90px;
+    cursor: pointer;
+    margin: 20px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+    z-index: 1;
+    color: #fff;
+}
+.hovicon.small {
+    font-size: 20px;
+    line-height:45px;
+    width:45px;
+    height:45px;
+    margin:7px;
+}
+.hovicon.mini {
+    font-size: 15px;
+    line-height:32px;
+    width:30px;
+    height:30px;
+    margin:7px;
+}
+.hovicon.auto-width {
+    width: auto;
+    height: auto;
+    padding: 15px;
+}
+.hovicon:after {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    content:'';
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.hovicon:before {
+    speak: none;
+    font-size: 48px;
+    line-height: 90px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    display: block;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Effect 8 */
+ .hovicon.effect-8 {
+    /* background: rgba(255, 255, 255, 0.1); */
+    background: white;
+    -webkit-transition: -webkit-transform ease-out 0.1s, background 0.2s;
+    -moz-transition: -moz-transform ease-out 0.1s, background 0.2s;
+    transition: transform ease-out 0.1s, background 0.2s;
+}
+.hovicon.effect-8:after {
+    top: 0;
+    left: 0;
+    padding: 0;
+    z-index: -1;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+}
+.hovicon.effect-8:hover {
+    background: rgba(255, 255, 255, 0.05);
+    -webkit-transform: scale(0.93);
+    -moz-transform: scale(0.93);
+    -ms-transform: scale(0.93);
+    transform: scale(0.93);
+    color: #fff;
+}
+.hovicon.effect-8:hover i {
+    color: #fff;
+}
+.hovicon.effect-8:hover:after {
+    -webkit-animation: sonarEffect 1.3s ease-out 75ms;
+    -moz-animation: sonarEffect 1.3s ease-out 75ms;
+    animation: sonarEffect 1.3s ease-out 75ms;
+}
+@-webkit-keyframes sonarEffect {
+    0% {
+        opacity: 0.3;
+    }
+    40% {
+        opacity: 0.5;
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+        -webkit-transform: scale(1.5);
+        opacity: 0;
+    }
+}
+@-moz-keyframes sonarEffect {
+    0% {
+        opacity: 0.3;
+    }
+    40% {
+        opacity: 0.5;
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+        -moz-transform: scale(1.5);
+        opacity: 0;
+    }
+}
+@keyframes sonarEffect {
+    0% {
+        opacity: 0.3;
+    }
+    40% {
+        opacity: 0.5;
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+/*  */
+.fade-in {
+  	-webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1.5s both;
+  	        animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1.5s both;
+          margin-left: 46%;
+          margin-top: -10vh;
+          position:relative;
+          top: 10%;
+          border: white;
+          background-color: transparent;
+          border-radius: 70px;
+          width: 180px;
+          height:180px;
+}
+img{
+  border-radius: 70px;
+}
+.leftlogo{
+  -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 3s both;
+          animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 3s both;
+  width:50px;
+  height:50px;
+  margin-top: 20vh;
+  margin-left: 40%;
+  border-radius: 50%;
+  background-color: grey;
+}
+.leftlogo2{
+  -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 3.5s both;
+          animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 3.7s both;
+  width:50px;
+  height:50px;
+  margin-top: 20vh;
+  margin-left: 60%;
+  border-radius: 50%;
+  background-color: grey;
+}
+.leftlogo3{
+  -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 3.7s both;
+          animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 3.7s both;
+  width:50px;
+  height:50px;
+  margin-top: 20vh;
+  margin-left: 80%;
+  border-radius: 60%;
+  background-color: grey;
+}
+
+.fade-in .small-foot1{
+  width:70px;
+  height:70px;
+  float: left;
+}
+.fade-in .small-foot1{
+  width:70px;
+  height:70px;
+  float: left;
+
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+.tracking-in-expand {
+	-webkit-animation: tracking-in-expand 1.2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	        animation: tracking-in-expand 1.2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+          margin-bottom: 0;
+}

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <script src="/angular.min.js" charset="utf-8"></script>
+    <script src="/angularScript.js" charset="utf-8"></script>
+    <!-- <script src="/subscript.js" charset="utf-8"></script> -->
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;600;700&display=swap" rel="stylesheet">
+    <title>Phoenix-Home</title>
+  </head>
+  <body ng-app="PhoenixApp">
+    <header>
+      <nav id="header-nav" class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <div class="navbar-brand">
+              <h1><bold>Phoenix</bold></h1>
+            </div>
+          </div>
+
+      <div class="container" id="navbar">
+      <span id="nav-list"> <a href="#section1">Work</a> </span>
+      <!-- <span id="nav-list"> <a href="#section2">Read</a> </span> -->
+      <span id="nav-list"> <a href="#section2">Today</a> </span>
+      <span id="nav-list"> <a href="settings">Settings</a> </span>
+      <span id="nav-list"> <a href="#section4" id="uni">{{message}}</a></span>
+      <span id="nav-list"> <a href="login">Logout</a></span>
+
+    </div>
+      </div>
+      </nav>
+    </header>
+
+    <!-- <img id="logo" src="logo.png" alt=""> -->
+    <!-- 3 block mian content -->
+    <div class="container-fluid" ng-controller="PhoenixSaysController as listen">
+      <div class="show1">
+          <div class="appendix" id="chats" ng-controller="ChatController as chat">
+            <h3 ng-if="chat.items.length==0" id="no-chat-boolean">No Chats here</h3>
+            <div id="userPhoenixNameWithMsg" ng-repeat = "item in chat.items">
+              <small>{[{item.user}]}</small>
+              <p id="chat_capsule">
+               {[{item.message}]}
+             </p>
+            </div>
+            <!-- <p id="chat_capsule" ng-repeat = "item in chat.items">
+
+              {[{item.message}]}
+            </p> -->
+          </div>
+          <div id="alertmsg" ng-controller='AlertController as alertmsg'>
+
+          </div>
+          <div ng-controller = 'WishController as wish'>
+            <div class="wishBox">
+              <p class="text-focus-in">{[{wish.greetUser}]}</p>
+              <div id="msg">
+                {{message}}
+              </div>
+              <p id="fullwish">{[{wish.fullwish}]}</p>
+            </div>
+            <div id="time" ng-controller='TimeController'>
+              {[{clock | date:'HH:mm:ss'}]}
+            </div>
+            <div id="txt">
+
+            </div>
+          </div>
+          <div class="appendix1 hide" >
+            <!-- <div id="superboxoutput"> -->
+              <h4 id="output"></h4>
+            <!-- </div> -->
+          </div>
+          <div id="action">
+
+          </div>
+      </div>
+
+      <section id="recentsearch">
+        <div class="show1" ng-controller = "RecentSearchController as rsc">
+            <div class="recentsearchhead">
+               My Recent Search
+            </div>
+          <h3 ng-if="rsc.recentsearch.length ==0">No History</h3>
+          <div class="recentSearchContent">
+            <div ng-repeat = "item in rsc.recentsearch">
+              <a href="{[{item.link}]}" target="_blank"><div class="searchbox">
+                {[{item.head}]}
+              </div></a>
+            </div>
+          </div>
+
+        </div>
+        <!-- <div >
+          <input type="message" name="searchnotes" value="">
+        </div> -->
+        <div class="">
+          <img  id="decoration"src="/2.png" alt="">
+
+        </div>
+
+
+      </section>
+
+      <section id="section1" ng-controller="WorkController as work">
+        <div class="show1">
+          <div class="sch-work">
+            <h2 style="color:white;">Scheduled Work</h2>
+          </div>
+          <div class="row" >
+            <div class="schedule"  id="past-works">
+              <h4 id="pw-header">Past Work</h4>
+              <div class="past-lastVisit">
+                <!-- <div class="col-md-6">
+                  <div style="border: 2px solid black; height:100px; ">
+
+                  </div>
+                  <div style="border: 2px solid black; height:100px;">
+
+                  </div>
+                </div> -->
+                <h5>{{ps}}</h5><p>{{W1}}</p>
+                <h5>{{ls}}</h5><p>{{W2}}</p>
+                <h5>{{five}}</h5><p>{{W3}}</p>
+                <h5>{{four}}</h5><p>{{W4}}</p>
+                <h5>{{three}}</h5><p>{{W5}}</p>
+                <h5>{{two}}</h5><p>{{W6}}</p>
+                <h5>{{one}}</h5><p>{{W7}}</p>
+
+
+              </div>
+            </div>
+
+            <div class="schedule">
+              <div class="card" id="workCard">
+                <form class="" action="auth/newWork" method="post">
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label for="l2" id="nos">Number Of Assignments</label>
+                      <input type="number" min="1" max="9" class="form-control" id="noOfAssign" placeholder="Number of Assignments" name="noOfAssign" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="l2" id="hrs">Hours</label>
+                      <input type="number" min="1" max="9" class="form-control" id="hours" placeholder="Number of hours" name="hrs" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="l2" id="hrs">Name of Assignments</label>
+                      <input type="text" class="form-control" id="AssignName" placeholder="Name of Assignments" name="AssignName" required>
+                      <small style="color:grey">Enter name of Assignments seperated by ','</small>
+                    </div>
+                    <button type="button" ng-click="work.scheduleTime();" class="btn btn-primary" id="schedule-time" >Schedule time</button>
+                    <button type="submit" class="btn btn-primary" name="button" id="save-time">Save</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="schedule">
+              <h3 ng-if="work.getworklist.length==0">Schedule your Work now!</h3>
+              <h4 id="worklist-header" ng-if="work.getworklist.length>0">Work List</h4>
+              <p id="worktodolist" ng-repeat = "item in work.getworklist">
+                complete {[{item.name}]} in {[{item.time}]}  <button type="button" class="btn btn-outline-dark" name="button" ng-click="work.removeWork($index)">remove</button> <button type="button" class="btn btn-outline-dark" name="button" ng-click="work.done($index)">Done</button>
+              </p>
+              <div id="start-button">
+                <button type="button"class="btn btn-outline-dark" ng-click="work.startWork();" ng-if="work.getworklist.length>0">Start Working</button>
+              </div>
+              <div id="stopwatch">
+
+              </div>
+              <div id="img3">
+                <img src="3.png" alt="">
+              </div>
+            </div>
+
+          </div>
+        </div>
+</section>
+
+<!-- <section id="section3">
+  <div class="show1">
+
+  </div>
+</section> -->
+<section id="section4" >
+  <div class="show1">
+    <div class="heyuserbox1">
+      <div class="heyuserhead">
+        Hey {{message}}
+      </div>
+      <div class="heyusercontent" ng-controller = 'HeyuserController as hey'>
+        <div class="heydisplaywork" ng-controller='WorkController as work'>
+          <!-- {[{work.workdisplay}]} -->
+          <div class="">
+            {{ls}}
+          </div>
+        </div>
+
+        <div id="heymotivation">
+          {[{hey.message}]}
+        </div>
+
+
+        <!-- testing area -->
+
+        <!-- - -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="aboutsection">
+  <h1 class="heyuserhead">About</h1>
+
+</section>
+
+
+
+
+      <div id="Talk-button">
+        <button type="button" class="btn btn-outline-dark" ng-click="listen.runSpeechRecognition()">Talk to Phoenix</button>
+      </div>
+    </div>
+  </body>
+
+  <script src="/bootstrap.min.js" charset="utf-8"></script>
+  <script src="jquery-3.5.1.min.js" charset="utf-8"></script>
+</html>
